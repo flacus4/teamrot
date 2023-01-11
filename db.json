@@ -1,0 +1,40 @@
+{
+  "users": [
+      {
+        "id": 1,
+        "name": "Jon Doe",
+        "age": 30,
+        "active": true
+      },
+      {
+        "id": 2,
+        "name": "Jane Doe",
+        "age": 25,
+        "active": true
+      },
+      {
+        "id": 3,
+        "name": "Bob Taylor",
+        "age": 45,
+        "active": false
+      }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "name": "Camera-Station"
+    },
+    {
+      "id": 2,
+      "name": "Handarbeitsplatz"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "description": "Aufgabenbeschreibung",
+      "module": null,
+      "createdAt": null
+    }
+  ]
+}

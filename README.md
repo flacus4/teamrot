@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### starts mock API json-server on port 3000
+```
+json-server --watch db.json
+```
+
 ### Compiles and minifies for production
 ```
 npm run build

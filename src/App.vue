@@ -1,18 +1,22 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import FetchersData from './components/FetchersData.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+ // TaskList,
+    FetchersData
+
   }
 }
 </script>
+
+<template>
+  <!--<TaskList /> -->
+  <FetchersData />
+
+</template>
 
 <style>
 #app {
