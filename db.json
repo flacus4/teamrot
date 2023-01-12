@@ -1,23 +1,61 @@
 {
-  "users": [
+  "users": [ 
+      { 
+        "id": 1, 
+        "available": false, 
+        "surname": "Dirk", 
+        "lastname": "Reichelt", 
+        "zigposTagID": "8121069331292357641"
+      }, 
       {
-        "id": 1,
-        "name": "Jon Doe",
-        "age": 30,
-        "active": true
-      },
+        "id": 2, 
+        "available": false, 
+        "surname": "Dietrich", 
+        "lastname": "Kammer", 
+        "zigposTagID": null
+      }, 
       {
-        "id": 2,
-        "name": "Jane Doe",
-        "age": 25,
-        "active": true
-      },
+        "id": 3, 
+        "available": false, 
+        "surname": "Rüdiger", 
+        "lastname": "von der Weth", 
+        "zigposTagID": null
+      }, 
       {
-        "id": 3,
-        "name": "Bob Taylor",
-        "age": 45,
-        "active": false
-      }
+        "id": 4, 
+        "available": false, 
+        "surname": "Karishma", 
+        "lastname": "Gavali", 
+        "zigposTagID": null
+      }, 
+      {
+        "id": 5,
+        "available": true, 
+        "surname": "Elena", 
+        "lastname": "Stoll", 
+        "zigposTagID": "8121069331292357662"
+      }, 
+      {
+        "id": 6, 
+        "available": false, 
+        "surname": "Pia", 
+        "lastname": "Bielitz", 
+        "zigposTagID": null
+      }, 
+      {
+        "id": 7, 
+        "available": false, 
+        "surname": "Nicole", 
+        "lastname": "Jäpel", 
+        "zigposTagID": "8121069331292357467"
+      }, 
+      {
+        "id": 8, 
+        "available": true, 
+        "surname": "David", 
+        "lastname": "Heik", 
+        "zigposTagID": "8121069331292357458"
+      } 
   ],
   "modules": [
     {

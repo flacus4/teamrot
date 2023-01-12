@@ -1,26 +1,45 @@
 <script>
-import { fetchMessage } from '@/services/fetchers'
 import axios from 'axios'
 
 export default {
 data() {
     return {
-    users: '',
-    dbdata: []
+    dbdata: ''
     }
 },
 async created() {
-    try {
-    this.dbdata = await fetchMessage()
-    this.users = await axios.get("/users");
-    }
-    catch(error){
-    console.log(error)
-    }
+    axios
+        .get('/db')
+        .then((response) => {
+        console.log(response.data);
+        this.dbdata = response.data;
+        })
+        .catch((errors) => {
+            console.log(errors);
+        });
 }
 }
 </script>
 
 <template>
-    <p>{{ users }}</p>
+    <h3>Users</h3>
+    <ul>
+        <li v-for="user in dbdata.users" :key="user.id">
+        {{ user }}
+        </li>
+    </ul>
+    <h3>Modules</h3>
+    <ul>
+        <li v-for="module in dbdata.modules" :key="module.id">
+        {{ module }}
+        </li>
+    </ul>
+    <h3>Tasks</h3>
+    <ul>
+        <li v-for="task in dbdata.tasks" :key="task.id">
+        {{ task }}
+        </li>
+    </ul>
+
+
 </template>
