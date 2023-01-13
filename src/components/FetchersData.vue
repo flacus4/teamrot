@@ -1,21 +1,31 @@
 <script>
 import axios from 'axios'
 
+//import apiData from'@services/api'
+
 export default {
 data() {
     return {
-    dbdata: ''
+    dbdata: '',
+   // apiData: ''
     }
 },
+/*async getData() {
+  try {
+    const response = await axios.get('/db');
+    this.dbdata = response.data;
+  } catch (error) {
+    console.error(error);
+  }
+},*/
 async created() {
-    axios
+    axios   
         .get('/db')
         .then((response) => {
-        console.log(response.data);
         this.dbdata = response.data;
         })
         .catch((errors) => {
-            console.log(errors);
+        console.log(errors);
         });
 }
 }
@@ -40,6 +50,6 @@ async created() {
         {{ task }}
         </li>
     </ul>
-
-
+    <v-btn variant="tonal">Button</v-btn>
+    <!--<p>{{ apiData }}</p>-->
 </template>
