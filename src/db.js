@@ -4,6 +4,7 @@ module.exports = () => {
         tasks: [],
     }
 
+    // use setinterval() instead
     for (let i = 0; i < 10; i++) {
         data.tasks.push({
             id: i,

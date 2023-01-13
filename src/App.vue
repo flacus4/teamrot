@@ -1,20 +1,31 @@
 <script>
 
 import FetchersData from './components/FetchersData.vue'
+import TaskNotification from './components/TaskNotification.vue'
 
 export default {
   name: 'App',
   components: {
- // TaskList,
-    FetchersData
-
+    FetchersData,
+    TaskNotification
   }
 }
 </script>
 
 <template>
-  <!--<TaskList /> -->
-  <FetchersData />
+
+<v-app>
+
+  <!-- Must have the app property -->
+  <v-app-bar app></v-app-bar>
+
+  <v-main>
+    <TaskNotification />
+     <FetchersData />
+  </v-main>
+
+</v-app>
+
 
 </template>
 
