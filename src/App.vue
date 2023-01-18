@@ -17,11 +17,51 @@ export default {
 <v-app>
 
   <!-- Must have the app property -->
-  <v-app-bar app></v-app-bar>
+  <v-app-bar app title="Title" color="grey-lighten-3">
+    
+    <v-btn stacked>
+      <v-badge
+        color="error"
+        dot
+      >
+        <v-icon icon="mdi-heart-pulse"></v-icon>
+      </v-badge>
 
-  <v-main>
+      Health
+    </v-btn>
+    
+
+    <v-btn stacked>
+      <v-badge
+        color="error"
+        content="9+"
+      >
+        <v-icon icon="mdi-post"></v-icon>
+      </v-badge>
+
+      Tasks
+    </v-btn>
+
+    <v-btn stacked>
+        <v-icon icon="mdi-cog"></v-icon>
+      Settings
+    </v-btn>
+
+
+    <v-btn
+      stacked
+      variant="tonal"
+    >
+      <v-icon icon="mdi-login"></v-icon>
+
+      Login
+    </v-btn>
+
+  </v-app-bar>
+
+  <v-main ma-0 pa-0>
     <TaskNotification />
-     <FetchersData />
+    <FetchersData />
   </v-main>
 
 </v-app>

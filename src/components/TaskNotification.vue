@@ -15,7 +15,17 @@ export default {
 
 <template>
 
-<v-alert  prominent  type="info">Fehlerkontrolle Kamera-Station</v-alert>
+  <v-alert  
+      prominent  
+      closable 
+      type="info" 
+      title="Neue Aufgabe"
+  >
+      <div>Fehlerkontrolle Kamera-Station</div>
+      <v-btn>
+          jetzt durchführen
+      </v-btn>
+  </v-alert> 
 
 </template>
 
