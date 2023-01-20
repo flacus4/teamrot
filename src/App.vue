@@ -1,13 +1,11 @@
 <script>
 
 import FetchersData from './components/FetchersData.vue'
-import TaskNotification from './components/TaskNotification.vue'
 
 export default {
   name: 'App',
   components: {
-    FetchersData,
-    TaskNotification
+    FetchersData
   }
 }
 </script>
@@ -19,53 +17,39 @@ export default {
   <!-- Must have the app property -->
   <v-app-bar app title="Title" color="grey-lighten-3">
     
-    <v-btn stacked>
-      <v-badge
-        color="error"
-        dot
-      >
+    <v-btn to="/health" stacked>
+      <v-badge color="error" dot>
         <v-icon icon="mdi-heart-pulse"></v-icon>
       </v-badge>
-
       Health
     </v-btn>
     
 
-    <v-btn stacked>
-      <v-badge
-        color="error"
-        content="9+"
-      >
+    <v-btn to="/tasks" stacked>
+      <v-badge color="error" content="9+">
         <v-icon icon="mdi-post"></v-icon>
       </v-badge>
-
       Tasks
     </v-btn>
 
-    <v-btn stacked>
+    <v-btn to="/settings" stacked>
         <v-icon icon="mdi-cog"></v-icon>
       Settings
     </v-btn>
 
 
-    <v-btn
-      stacked
-      variant="tonal"
-    >
+    <v-btn to="/login" stacked variant="tonal">
       <v-icon icon="mdi-login"></v-icon>
-
       Login
     </v-btn>
 
   </v-app-bar>
 
   <v-main ma-0 pa-0>
-    <TaskNotification />
-    <FetchersData />
+    <FetchersData/>
   </v-main>
 
 </v-app>
-
 
 </template>
 
@@ -74,7 +58,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }

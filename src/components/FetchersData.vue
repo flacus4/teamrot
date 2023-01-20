@@ -1,4 +1,5 @@
 <script>
+import TaskNotification from './TaskNotification.vue';
 
 export default {
 data() {
@@ -9,22 +10,23 @@ data() {
     exampleSocket: null
     }
 },
+components: {
+    TaskNotification
+},
 methods: {
   createTask(){
     let randInt = Math.round(Math.random() * (10000 - 3000) + 3000);
-    console.log(this.data.tasks.id);
-    //let randID = Math.round(Math.random() * 30);
 
     clearInterval(this.intervalId);
-   // console.log("task update" + randInt);
+    
     this.exampleSocket.send(
         JSON.stringify(
             {
-                type: 'create', 
+                type: 'update', 
                 path: 'tasks', 
-                id: this.id++, 
+                id: 1, 
                 data: {
-                    id: this.id, 
+                    id: 1, 
                     description: "",
                     module: "",
                     createdAt: this.getDateTime()
@@ -73,12 +75,16 @@ async created() {
 }
 
 
-
 }
 </script>
 
 <template>
-    <h3>Users</h3>
+
+    <TaskNotification/>
+    <router-view :apiData="data"></router-view>    
+    <!-- <router-view></router-view> -->
+    
+    <!-- <h3>Users</h3>
     <ul>
         <li v-for="user in data['users']" :key="user.id">
         {{ user }}
@@ -95,5 +101,5 @@ async created() {
         <li v-for="task in data['tasks']" :key="task.id">
         {{ task }}
         </li>
-    </ul>
+    </ul> -->
 </template>
