@@ -6,6 +6,16 @@ export default {
   name: 'App',
   components: {
     FetchersData
+  },
+  data() {
+    return {
+      no_tasks: 9
+    }
+  },
+  methods: {
+    updateTaskBadge(value){
+      this.no_tasks=value;
+    }
   }
 }
 </script>
@@ -26,7 +36,7 @@ export default {
     
 
     <v-btn to="/tasks" stacked>
-      <v-badge color="error" content="9+">
+      <v-badge color="error" :content=this.no_tasks >
         <v-icon icon="mdi-post"></v-icon>
       </v-badge>
       Tasks
@@ -46,7 +56,7 @@ export default {
   </v-app-bar>
 
   <v-main ma-0 pa-0>
-    <FetchersData/>
+    <FetchersData />
   </v-main>
 
 </v-app>
@@ -59,6 +69,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 10px;
 }
 </style>

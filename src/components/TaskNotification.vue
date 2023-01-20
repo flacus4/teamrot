@@ -7,6 +7,9 @@ export default {
 
     }
   },
+  props: {
+   // taskData: []
+  },
   methods: {
 
   }

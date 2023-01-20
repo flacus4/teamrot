@@ -69,102 +69,12 @@
   ],
   "tasks": [
     {
-      "id": 1,
+      "id": 8,
       "description": "",
       "module": "",
-      "createdAt": "20. Januar 2023 um 12:24:58",
+      "createdAt": "20. Januar 2023 um 16:37:26",
       "comments": [],
       "assignedTo": 8
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 13:24:51",
-      "comments": [],
-      "assignedTo": 8
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 18:38:19",
-      "comments": [],
-      "assignedTo": 8
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 18:40:30",
-      "comments": [],
-      "assignedTo": 8
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 18:45:39"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 18:56:14"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 18:57:40"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 19:03:42"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 19:04:30"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 19:10:35"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 19:13:13"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "19. Januar 2023 um 19:14:35"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "20. Januar 2023 um 11:21:42"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "20. Januar 2023 um 11:22:18"
-    },
-    {
-      "id": 1,
-      "description": "",
-      "module": "",
-      "createdAt": "20. Januar 2023 um 11:25:55"
     }
   ],
   "posts": []
