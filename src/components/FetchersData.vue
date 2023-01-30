@@ -42,11 +42,12 @@ methods: {
             id: this.id++, 
             data: {
                 id: this.id, 
-                description: "",
-                module: "",
                 createdAt: dateTime,
-                comments: [],
-                assignedTo: assignee
+                assignedTo: assignee,
+                status: "offen",
+                module: "Kamera-Station",
+                description: "",               
+                comments: []                
             } 
         }            
         this.exampleSocket.send(JSON.stringify(this.task));              

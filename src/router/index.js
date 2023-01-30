@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HealthManagement from '../components/HealthManagement.vue'
 import LoginPrompt from '../components/LoginPrompt.vue'
 import SettingsOverview from '../components/SettingsOverview.vue'
+import TaskDetail from '../components/TaskDetail.vue'
 import TaskList from '../components/TaskList.vue'
 
 const routes = [
@@ -13,22 +14,27 @@ const routes = [
 //    },
   {
     path: '/tasks',
-    name: 'tasks',
+    name: 'TaskList',
     component: TaskList
   },
   {
+    path: '/tasks/:id',
+    name: 'TaskDetail',
+    component: TaskDetail
+  },
+  {
     path: '/health',
-    name: 'health',
+    name: 'HealthManagement',
     component: HealthManagement
   },
   {
     path: '/login',
-    name: 'login',
+    name: 'LoginPrompt',
     component: LoginPrompt
   },
   {
     path: '/settings',
-    name: 'settings',
+    name: 'SettingsOverview',
     component: SettingsOverview
   }
 ]

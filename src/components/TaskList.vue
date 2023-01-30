@@ -11,7 +11,9 @@ export default {
     apiData: {}
   },
   methods: {
-
+    showTaskDetail(tid) {
+      this.$router.push({name:'TaskDetail',params:{id:tid}})
+    }
   }
 }
 </script>
@@ -32,6 +34,9 @@ export default {
    
     <v-expansion-panel-text>
       {{ task }}
+      <!-- <h3 @click="goTodetail(data.productId)" >{{data.productTitle}}</h3> -->
+      <!-- <v-btn to="/task/{{ $route.params.id }}">bearbeiten</v-btn> -->
+      <v-btn @click="showTaskDetail(task.id)">bearbeiten</v-btn>
     </v-expansion-panel-text>
   </v-expansion-panel>
 </v-expansion-panels>

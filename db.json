@@ -69,12 +69,201 @@
   ],
   "tasks": [
     {
+      "id": 28,
+      "createdAt": "30. Januar 2023 um 16:30:17",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 27,
+      "createdAt": "30. Januar 2023 um 16:22:23",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 26,
+      "createdAt": "30. Januar 2023 um 15:24:47",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 25,
+      "createdAt": "30. Januar 2023 um 15:24:23",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 24,
+      "createdAt": "30. Januar 2023 um 15:05:52",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 23,
+      "createdAt": "30. Januar 2023 um 15:05:35",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 22,
+      "createdAt": "30. Januar 2023 um 15:05:09",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 21,
+      "createdAt": "30. Januar 2023 um 14:58:56",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 20,
+      "createdAt": "23. Januar 2023 um 17:38:47",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 19,
+      "createdAt": "23. Januar 2023 um 17:38:29",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 18,
+      "createdAt": "23. Januar 2023 um 17:38:02",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 17,
+      "createdAt": "23. Januar 2023 um 17:32:09",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 16,
+      "createdAt": "23. Januar 2023 um 17:24:34",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 15,
+      "createdAt": "23. Januar 2023 um 17:24:00",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 14,
+      "createdAt": "23. Januar 2023 um 17:23:21",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 13,
+      "createdAt": "23. Januar 2023 um 17:23:00",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 12,
+      "createdAt": "23. Januar 2023 um 17:22:38",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 11,
+      "createdAt": "23. Januar 2023 um 17:22:15",
+      "assignedTo": 5,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 10,
+      "createdAt": "23. Januar 2023 um 17:21:45",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
+      "id": 9,
+      "createdAt": "23. Januar 2023 um 17:18:14",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
+    },
+    {
       "id": 8,
       "description": "",
       "module": "",
       "createdAt": "20. Januar 2023 um 16:37:26",
       "comments": [],
       "assignedTo": 8
+    },
+    {
+      "id": 29,
+      "createdAt": "30. Januar 2023 um 16:30:34",
+      "assignedTo": 8,
+      "status": "offen",
+      "module": "Kamera-Station",
+      "description": "",
+      "comments": []
     }
   ],
   "posts": []
