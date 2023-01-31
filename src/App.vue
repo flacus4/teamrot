@@ -1,5 +1,6 @@
 <script>
 
+import { useTheme } from 'vuetify'
 import FetchersData from './components/FetchersData.vue'
 
 export default {
@@ -16,6 +17,14 @@ export default {
     updateTaskBadge(value){
       this.no_tasks=value;
     }
+  },
+  setup () {
+    const theme = useTheme()
+
+    return {
+      theme,
+      toggleTheme: () => theme.global.name.value = theme.global.current.value.dark ? 'customLightTheme' : 'customDarkTheme'
+    }
   }
 }
 </script>
@@ -25,10 +34,12 @@ export default {
 <v-app>
 
   <!-- Must have the app property -->
-  <v-app-bar app title="Title" color="grey-lighten-3">
+  <v-app-bar app title="Title" color="primary">
+
+    <v-btn @click="toggleTheme">toggle theme</v-btn>
     
     <v-btn to="/health" stacked>
-      <v-badge color="error" dot>
+      <v-badge color="warning" dot>
         <v-icon icon="mdi-heart-pulse"></v-icon>
       </v-badge>
       Health
@@ -36,7 +47,7 @@ export default {
     
 
     <v-btn to="/tasks" stacked>
-      <v-badge color="error" :content=this.no_tasks >
+      <v-badge color="warning" :content=this.no_tasks >
         <v-icon icon="mdi-post"></v-icon>
       </v-badge>
       Tasks
@@ -71,4 +82,5 @@ export default {
   color: #2c3e50;
   margin: 10px;
 }
+
 </style>

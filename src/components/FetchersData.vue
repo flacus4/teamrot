@@ -122,7 +122,7 @@ async created() {
 
 <template>
 
-    <TaskNotification v-model="alert" />
+    <TaskNotification v-model="alert" color="warning"/>
     <router-view :apiData="data"></router-view>    
     <!-- <router-view></router-view> -->
     

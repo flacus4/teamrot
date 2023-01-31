@@ -12,6 +12,30 @@ import * as directives from 'vuetify/directives'
 
 Axios.defaults.baseURL = 'http://localhost:3000/'
 
+// overwrite default colors 
+// error: '#B00020',
+// info: '#2196F3', 
+// success: '#4CAF50', 
+// warning: '#FB8C00'
+// (... or define custom selector, e.g. notification:  '#...')
+
+const colors = {
+  primary: '#2196F3',
+  'primary-darken-1': '#3700B3',
+  secondary: '#03DAC6',
+  'secondary-darken-1': '#018786',
+}
+
+const customLightTheme = {
+  dark: false,
+  colors: colors
+}
+const customDarkTheme = {
+  dark: true,
+  colors: colors
+}
+
+
 const vuetify = createVuetify({
   components,
   directives,
@@ -21,6 +45,13 @@ const vuetify = createVuetify({
     sets: {
 //      fa,
       mdi
+    }
+  }, 
+  theme: {
+    defaultTheme: 'customLightTheme',
+    themes: {
+      customLightTheme,
+      customDarkTheme
     }
   }
 })
