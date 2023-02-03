@@ -1,6 +1,5 @@
 <script>
 
-import { useTheme } from 'vuetify'
 import FetchersData from './components/FetchersData.vue'
 
 export default {
@@ -17,14 +16,6 @@ export default {
     updateTaskBadge(value){
       this.no_tasks=value;
     }
-  },
-  setup () {
-    const theme = useTheme()
-
-    return {
-      theme,
-      toggleTheme: () => theme.global.name.value = theme.global.current.value.dark ? 'customLightTheme' : 'customDarkTheme'
-    }
   }
 }
 </script>
@@ -35,8 +26,6 @@ export default {
 
   <!-- Must have the app property -->
   <v-app-bar app title="Title" color="primary">
-
-    <v-btn @click="toggleTheme">toggle theme</v-btn>
     
     <v-btn to="/health" stacked>
       <v-badge color="warning" dot>

@@ -20,6 +20,8 @@ export default {
 
 <template>
 
+<h3>Aktuelle Aufgaben</h3>
+
 <v-expansion-panels class="mb-6">  
   <v-expansion-panel v-for="task in apiData['tasks']" :key="task.id">
     <v-expansion-panel-title expand-icon="mdi-plus" collapse-icon="mdi-minus">     

@@ -1,16 +1,18 @@
-import { createApp } from 'vue'
+import { createApp, reactive } from 'vue'
 import App from './App.vue'
-import Axios from 'axios'
 import router from './router/index.js'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify } from 'vuetify'
-//import { fa } from 'vuetify/iconsets/fa'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
-Axios.defaults.baseURL = 'http://localhost:3000/'
+const app = createApp(App)
+
+export const settings = reactive({
+  soundAlert: true
+})
 
 // overwrite default colors 
 // error: '#B00020',
@@ -26,16 +28,6 @@ const colors = {
   'secondary-darken-1': '#018786',
 }
 
-const customLightTheme = {
-  dark: false,
-  colors: colors
-}
-const customDarkTheme = {
-  dark: true,
-  colors: colors
-}
-
-
 const vuetify = createVuetify({
   components,
   directives,
@@ -43,17 +35,20 @@ const vuetify = createVuetify({
     defaultSet: 'mdi',
     aliases,
     sets: {
-//      fa,
       mdi
     }
   }, 
   theme: {
-    defaultTheme: 'customLightTheme',
+    defaultTheme: 'light',
     themes: {
-      customLightTheme,
-      customDarkTheme
+      light: {
+        colors: colors
+      },
+      dark: {
+        colors: colors
+      }
     }
   }
 })
 
-createApp(App).use(router).use(vuetify).mount('#app')
+app.use(router).use(vuetify).mount('#app')

@@ -1,5 +1,7 @@
 <script>
 import TaskNotification from './TaskNotification.vue';
+import NoTaskNotification from './NoTaskNotification.vue';
+import { settings } from '../main.js'
 
 export default {
 data() {
@@ -8,35 +10,49 @@ data() {
     data: [],
     intervalId: null,
     id: null,
-    randInt: 10000,
+    randInt: 20000,
     task: null,
-    exampleSocket: null
+    latestTask: null,
+    exampleSocket: null,
+    settings
     }
 },
 components: {
-    TaskNotification
+    TaskNotification,
+    NoTaskNotification
 },
 methods: {
     createNotification(){
        this.alert = true;
-       setTimeout(() => {
-            this.alert = false;
-       }, (this.randInt-200))
-       //this.$emit('updateTaskBadge', this.data.tasks.length);
+       if(settings.soundAlert) {
+            this.playSound()
+       }
+       
+    //    setTimeout(() => {
+    //         this.alert = false;
+    //    }, 20000)
+    //this.$emit('updateTaskBadge', this.data.tasks.length);
     },
     createTask(){         
 
+        // check no of tasks
         let no_tasks = this.data.tasks.length;   
+        console.log(this.data.tasks.length)
+
+
         let dateTime = this.getDateTime();
         let assignee = this.getAvailableUser();
         
-        if(no_tasks == 0)
-            this.id = 0;
-        else {
-           this.id = this.getMaxId(this.data.tasks)
-        }
+        
+        if (no_tasks < 8 ){
+            
+            if(no_tasks == 0)
+               this.id = 0;
+            else 
+               this.id = this.getMaxId(this.data.tasks)
 
-        this.task = {
+            //create new task
+            this.task = {
             type: 'create', 
             path: 'tasks', 
             id: this.id++, 
@@ -48,21 +64,24 @@ methods: {
                 module: "Kamera-Station",
                 description: "",               
                 comments: []                
-            } 
-        }            
-        this.exampleSocket.send(JSON.stringify(this.task));              
-        this.createNotification();  
+                } 
+            }      
 
-        clearInterval(this.intervalId);    
-            
-        if(no_tasks < 8) {
+            //send to socket
+            this.exampleSocket.send(JSON.stringify(this.task));   
 
-            this.randInt = Math.round(Math.random() * (40000 - 20000) + 20000); 
-            this.intervalId = setInterval(this.createTask, this.randInt);     
-
+             //create notification
+            this.latestTask = this.task.data;        
+            this.createNotification();  
         }
-        
-      
+
+        // clear interval
+        clearInterval(this.intervalId);      
+    
+        //new loop
+        this.randInt = Math.round(Math.random() * (40000 - 20000) + 20000); 
+        this.intervalId = setInterval(this.createTask, this.randInt);      
+
     },
     getDateTime() {
                 const options = {
@@ -88,6 +107,10 @@ methods: {
         return (Math.max.apply(Math, obj.map(function(o) {
             return o.id;
         })));
+    },
+    playSound (){
+      const sound = ( new Audio( require('@/assets/ping.mp3')))
+      sound.play();
     }
 },
 async created() {
@@ -122,9 +145,10 @@ async created() {
 
 <template>
 
-    <TaskNotification v-model="alert" color="warning"/>
+    <TaskNotification v-if="alert" :latestTaskData="latestTask" />
+    <NoTaskNotification v-else />
+
     <router-view :apiData="data"></router-view>    
-    <!-- <router-view></router-view> -->
     
     <!-- <h3>Users</h3>
     <ul>
