@@ -1,29 +1,36 @@
 # teamya
 
-## Project setup
+## setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### concurrently start app and json-socket-server
 ```
-npm run serve
-```
-
-### starts mock API json-server on port 3000
-```
-json-server --watch db.json
+npm start
 ```
 
-### Compiles and minifies for production
+(this is shorthand for)
+
+```
+npm run serve 
+```
+
+and
+
+```
+json-socket-server db.json
+```
+
+### compile and minify for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### lint and fix files
 ```
 npm run lint
 ```
 
-### Customize configuration
+### customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
