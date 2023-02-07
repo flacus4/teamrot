@@ -2,6 +2,7 @@
 import TaskNotification from './TaskNotification.vue';
 import NoTaskNotification from './NoTaskNotification.vue';
 import { settings } from '../main.js'
+import { useApiStore } from '@/stores/ApiStore';
 
 export default {
 data() {
@@ -27,22 +28,13 @@ methods: {
        if(settings.soundAlert) {
             this.playSound()
        }
-       
-    //    setTimeout(() => {
-    //         this.alert = false;
-    //    }, 20000)
-    //this.$emit('updateTaskBadge', this.data.tasks.length);
     },
     createTask(){         
 
         // check no of tasks
-        let no_tasks = this.data.tasks.length;   
-        console.log(this.data.tasks.length)
-
-
+        let no_tasks = this.data.tasks.length;  
         let dateTime = this.getDateTime();
-        let assignee = this.getAvailableUser();
-        
+        let assignee = this.getAvailableUser();        
         
         if (no_tasks < 8 ){
             
@@ -62,7 +54,7 @@ methods: {
                 assignedTo: assignee,
                 status: "offen",
                 module: "Kamera-Station",
-                description: "",               
+                description: "Ein fehlerhaftes Produkt wurde erkannt. Bitte Ursache prüfen und Produkt weiterleiten.",               
                 comments: []                
                 } 
             }      
@@ -78,7 +70,7 @@ methods: {
         // clear interval
         clearInterval(this.intervalId);      
     
-        //new loop
+        // new loop
         this.randInt = Math.round(Math.random() * (40000 - 20000) + 20000); 
         this.intervalId = setInterval(this.createTask, this.randInt);      
 
@@ -101,7 +93,7 @@ methods: {
         });
         assignee = availableUsers[Math.floor(Math.random()*availableUsers.length)]
 
-        return assignee.id;
+        return assignee.surname +" "+ assignee.lastname;
     },
     getMaxId(obj) {
         return (Math.max.apply(Math, obj.map(function(o) {
@@ -132,13 +124,20 @@ async created() {
     this.exampleSocket.onmessage = (m) => {
         let message = JSON.parse(m.data);        
         this.data[message.path] = message.data;
+
+        this.store.setApiData(this.data);
     };
     this.exampleSocket.onclose = (ev) => {
         console.log('Socket closed: ', ev);
     };
         
+},
+setup() {
+    const store = useApiStore()
+    return { 
+        store 
+    }
 }
-
 
 }
 </script>
@@ -148,18 +147,6 @@ async created() {
     <TaskNotification v-if="alert" :latestTaskData="latestTask" />
     <NoTaskNotification v-else />
 
-    <router-view :apiData="data"></router-view>    
-    
-    <!-- <h3>Users</h3>
-    <ul>
-        <li v-for="user in data['users']" :key="user.id">
-        {{ user }}
-        </li>
-    </ul>
-    <h3>Modules</h3>
-    <ul>
-        <li v-for="module in data['modules']" :key="module.id">
-        {{ module }}
-        </li>
-    </ul>-->
+    <router-view :apiData="data"></router-view>        
+
 </template>

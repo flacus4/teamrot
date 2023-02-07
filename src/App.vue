@@ -1,6 +1,7 @@
 <script>
 
 import FetchersData from './components/FetchersData.vue'
+import { useApiStore } from '@/stores/ApiStore';
 
 export default {
   name: 'App',
@@ -16,7 +17,14 @@ export default {
     updateTaskBadge(value){
       this.no_tasks=value;
     }
-  }
+  },
+  setup() {
+    const store = useApiStore()
+
+    return {
+      store
+    }
+  },
 }
 </script>
 

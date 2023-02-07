@@ -42,8 +42,6 @@ export default {
   },
   mounted (){
 
-    console.log('mounted');
-
     // restore sound setings from global value (main.js)
     this.soundAlert = settings.soundAlert;    
 

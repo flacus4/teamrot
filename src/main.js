@@ -1,4 +1,6 @@
 import { createApp, reactive } from 'vue'
+import { createPinia } from 'pinia'
+
 import App from './App.vue'
 import router from './router/index.js'
 import 'vuetify/styles'
@@ -8,22 +10,18 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
+
+const pinia = createPinia();
 const app = createApp(App)
 
 export const settings = reactive({
   soundAlert: true
 })
 
-// overwrite default colors 
-// error: '#B00020',
-// info: '#2196F3', 
-// success: '#4CAF50', 
-// warning: '#FB8C00'
-// (... or define custom selector, e.g. notification:  '#...')
-
 const colors = {
   primary: '#2196F3',
-  'primary-darken-1': '#3700B3',
+  'primary-darken-1': '#196DB3',
+  'primary-darken-2': '#104673',
   secondary: '#03DAC6',
   'secondary-darken-1': '#018786',
 }
@@ -51,4 +49,10 @@ const vuetify = createVuetify({
   }
 })
 
-app.use(router).use(vuetify).mount('#app')
+app.use(pinia)
+app.use(router)
+app.use(vuetify)
+
+app.mount('#app')
+
+

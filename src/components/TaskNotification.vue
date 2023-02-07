@@ -10,8 +10,8 @@ export default {
     latestTaskData: {}
   },
   methods: {
-    showTaskDetail(tid) {
-      this.$router.push({name:'TaskDetail', params:{id:tid}})
+    showTaskDetail() {
+      this.$router.push({name:'TaskDetail', params:{id: this.latestTaskData.id }})
     }
   }
 }
@@ -24,7 +24,7 @@ export default {
       title="Neue Aufgabe"
   >
       <div>Modul: {{ latestTaskData.module }}</div>
-      <v-btn @click="showTaskDetail(latestTaskData.id)" color="white">
+      <v-btn @click="showTaskDetail()" color="white">
         jetzt durchführen
       </v-btn>
   </v-alert> 
